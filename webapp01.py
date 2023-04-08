@@ -2,7 +2,7 @@ import streamlit as st  # pip install streamlit
 import pandas as pd  # pip install pandas
 import base64  # Standard Python Module
 from io import StringIO, BytesIO  # Standard Python Module
-
+import openpyxl
 
 def generate_excel_download_link(df):
     # Credit Excel: https://discuss.streamlit.io/t/how-to-add-a-download-excel-csv-function-to-a-button/4474/5
@@ -16,7 +16,7 @@ def generate_excel_download_link(df):
 
 st.set_page_config(page_title='Excel Plotter')
 st.title('Excel Plotter 📈')
-st.subheader('Feed me with your Excel file')
+st.subheader('Please upload an Excel file')
 
 uploaded_file = st.file_uploader('Choose a XLSX file', type='xlsx')
 if uploaded_file:
