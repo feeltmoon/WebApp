@@ -23,16 +23,6 @@ if uploaded_file:
     st.markdown('---')
     df = pd.read_excel(uploaded_file, engine='openpyxl')
     st.dataframe(df)
-    groupby_column = st.selectbox(
-        'What would you like to analyse?',
-        ('Ship Mode', 'Segment', 'Category', 'Sub-Category'),
-    )
-
-    # -- GROUP DATAFRAME
-    output_columns = ['Sales', 'Profit']
-    df_grouped = df.groupby(by=[groupby_column], as_index=False)[output_columns].sum()
-
 
     # -- DOWNLOAD SECTION
     st.subheader('Downloads:')
-    generate_excel_download_link(df_grouped)
