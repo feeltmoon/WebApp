@@ -24,19 +24,19 @@ st.markdown("""---""")
 st.sidebar.header("Please Filter Here:")
 city = st.sidebar.multiselect(
     "Select the City:",
-    options=list(df["City"].unique()),
+    options=df["City"].unique(),
     default=df["City"].unique()
 )
 
 customer_type = list[st.sidebar.multiselect(
     "Select the Customer Type:",
-    options=list(df["Customer_type"].unique()),
+    options=df["Customer_type"].unique(),
     default=df["Customer_type"].unique(),
 )]
 
 gender = list[st.sidebar.multiselect(
     "Select the Gender:",
-    options=list(df["Gender"].unique()),
+    options=df["Gender"].unique(),
     default=df["Gender"].unique()
 )]
 
