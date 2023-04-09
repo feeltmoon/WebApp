@@ -31,21 +31,21 @@ df = get_data_from_excel()
 
 # ---- SIDEBAR ----
 st.sidebar.header("Please Filter Here:")
-city = list[st.sidebar.multiselect(
+city = st.sidebar.multiselect(
     "Select the City:",
-    options=df["City"].unique(),
+    options=list(df["City"].unique()),
     default=df["City"].unique()
-)]
+)
 
 customer_type = list[st.sidebar.multiselect(
     "Select the Customer Type:",
-    options=df["Customer_type"].unique(),
+    options=list(df["Customer_type"].unique()),
     default=df["Customer_type"].unique(),
 )]
 
 gender = list[st.sidebar.multiselect(
     "Select the Gender:",
-    options=df["Gender"].unique(),
+    options=list(df["Gender"].unique()),
     default=df["Gender"].unique()
 )]
 
