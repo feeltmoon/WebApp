@@ -14,10 +14,7 @@ import numpy as np
 st.set_page_config(page_title="Sales Dashboard", page_icon=":bar_chart:", layout="wide")
 
 # ---- READ EXCEL ----
-df = pd.read_excel(
-    io="supermarkt_sales.xlsx",
-    engine="openpyxl",
-    sheet_name="Sales")
+df = pd.read_excel("supermarkt_sales.xlsx", sheet_name="Sales")
 
 # ---- SIDEBAR ----
 st.sidebar.header("Please Filter Here:")
