@@ -16,8 +16,9 @@ st.set_page_config(page_title="Sales Dashboard", page_icon=":bar_chart:", layout
 # ---- READ EXCEL ----
 @st.cache
 def get_data_from_excel():
+    url = 'https://github.com/feeltmoon/WebApp/blob/main/supermarkt_sales.xlsx'
     df = pd.read_excel(
-        io="supermarkt_sales.xlsx",
+        url,
         engine="openpyxl",
         sheet_name="Sales",
         skiprows=3,
