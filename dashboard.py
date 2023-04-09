@@ -28,17 +28,17 @@ city = st.sidebar.multiselect(
     default=df["City"].unique()
 )
 
-customer_type = list[st.sidebar.multiselect(
+customer_type = st.sidebar.multiselect(
     "Select the Customer Type:",
     options=df["Customer_type"].unique(),
     default=df["Customer_type"].unique(),
-)]
+)
 
-gender = list[st.sidebar.multiselect(
+gender = st.sidebar.multiselect(
     "Select the Gender:",
     options=df["Gender"].unique(),
     default=df["Gender"].unique()
-)]
+)
 
 df_selection = df.query(
     "City == @city & Customer_type ==@customer_type & Gender == @gender"
