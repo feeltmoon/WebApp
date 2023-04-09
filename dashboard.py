@@ -16,6 +16,7 @@ st.set_page_config(page_title="Sales Dashboard", page_icon=":bar_chart:", layout
 # ---- READ EXCEL ----
 df = pd.read_excel("supermarkt_sales.xlsx", sheet_name="Sales")
 
+st.markdown("""---""")
 st.dataframe(df)
 st.markdown("""---""")
 
