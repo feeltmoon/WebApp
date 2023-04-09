@@ -8,6 +8,7 @@
 import pandas as pd  # pip install pandas openpyxl
 import plotly.express as px  # pip install plotly-express
 import streamlit as st  # pip install streamlit
+import numpy as np
 
 # emojis: https://www.webfx.com/tools/emoji-cheat-sheet/
 st.set_page_config(page_title="Sales Dashboard", page_icon=":bar_chart:", layout="wide")
@@ -59,7 +60,7 @@ st.markdown("##")
 
 # TOP KPI's
 total_sales = int(df_selection["Total"].sum())
-average_rating = round(df_selection["Rating"].mean(), 1)
+average_rating = round(df_selection["Rating"].astype(np.float).mean(), 1)
 star_rating = ":star:" * int(round(average_rating, 0))
 average_sale_by_transaction = round(df_selection["Total"].mean(), 2)
 
